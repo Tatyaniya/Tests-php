@@ -23,8 +23,8 @@
           <td><?php echo $task['description']; ?></td>
           <td><?php echo $task['status'] ? 'Completed' : 'Not Completed'; ?></td>
           <td>
-            <a href="/tasks/edit/<?php echo $task['id']; ?>">Edit</a>
-            <a href="/tasks/delete/<?php echo $task['id']; ?>">Delete</a>
+            <a href="<?php echo BASE_URL; ?>tasks/edit/<?php echo $task['id']; ?>">Edit</a>
+            <a href="<?php echo BASE_URL; ?>tasks/delete/<?php echo $task['id']; ?>">Delete</a>
           </td>
         </tr>
       <?php endforeach; ?>
