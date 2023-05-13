@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Task List</h1>
-  <a href="/tasks/create">Add Task</a>
+  <a href="<?php echo BASE_URL; ?>tasks/create">Add Task</a>
   <table>
     <thead>
       <tr>

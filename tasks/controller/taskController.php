@@ -1,9 +1,14 @@
 <?php
 
 class TaskController {
+  private $task;
+
+  public function __construct($task) {
+    $this->task = $task;
+  }
 
   public function index() {
-    $tasks = new Task->getAllTasks();
+    $tasks = $this->task->getAllTasks();
     include 'views/task_list.php';
   }
 
@@ -17,7 +22,7 @@ class TaskController {
 
     $this->task->createTask($title, $description);
 
-    header('Location: /tasks');
+    header("Location: BASE_URL/tasks");
     exit;
   }
 
@@ -33,14 +38,14 @@ class TaskController {
 
     $this->task->updateTask($id, $title, $description, $status);
 
-    header('Location: /tasks');
+    header("Location: BASE_URL/tasks");
     exit;
   }
 
   public function delete($id) {
     $this->task->deleteTask($id);
 
-    header('Location: /tasks');
+    header("Location: BASE_URL/tasks");
     exit;
   }
 }
