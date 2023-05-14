@@ -9,11 +9,6 @@ $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME .'', DB_USER, DB_PA
 $full_path = $_SERVER['REQUEST_URI'];
 $path = str_replace(BASE_URL, '', $full_path);
 $taskController = new TaskController(new Task($db));
-$taskController->index();
-// $taskController->create();
-//$taskController->store();
-// $taskController->edit(1);
-//$taskController->update(1);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   if ($path === '/tasks') {
